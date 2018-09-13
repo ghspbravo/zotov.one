@@ -26,71 +26,71 @@ export default class Portfolio extends Component {
     projects = [
         {
             title: 'KATADZE',
-            task: 'Создан брендбук, выполнен редизайн сайта, создана веб-платформа поиска и создания гидов в любой точке мира.',
-            tags: 'брендинг, дизайн, разработка, seo',
+            task: 'Created a brand book, redesigned the site, a web-based platform for searching and creating guides in any part of the world.',
+            tags: 'branding, design, development, seo',
             thumbnail: katadze_thumbnail,
             url: 'https://katadze.ru/'
         },
         {
             title: 'SdelanoVmeste',
-            task: 'Разработан многостраничный сайт брендингового агентства.',
-            tags: 'дизайн, разработка',
+            task: 'Developed a multi-page branding agency site.',
+            tags: 'design, development',
             thumbnail: sdelanovmeste_thumbnail,
             url: 'http://sdelanovmeste.ru/demo'
         },
         {
             title: 'Samprachka',
-            task: 'Разработан сайт компании прачечных по всей России с интеграцией сложных функциональных модулей.',
-            tags: 'дизайн, разработка',
+            task: 'Developed a website of the laundry company across Russia was developed with the integration of complex functional modules.',
+            tags: 'design, development',
             thumbnail: samprachka_thumbnail,
             url: 'http://sam-prachka.ru/'
         },
         {
             title: 'Ducatur',
-            task: 'Разработан сайт и веб-платформа связанной с обменом криптновалюты с сложными элементами визуализации.',
-            tags: 'дизайн, разработка',
+            task: 'Developed a website and web platform associated with the exchange crypto with sophisticated visualization elements.',
+            tags: 'design, development',
             thumbnail: ducatur_thumbnail,
             url: 'https://ghspbravo.github.io/ducatur/'
         },
         {
-            title: 'София Никитчук',
-            task: 'Разработан дизайн и сайт рассказывающий о деятельности модели с элементами портфолио.',
-            tags: 'дизайн, разработка',
+            title: 'Sofia Nikitchuk',
+            task: 'A design and a website that describes the activities of a supermodel with elements of a portfolio.',
+            tags: 'design, development',
             thumbnail: nikitchuk_thumbnail,
             url: 'https://sofianikitchuk.github.io/'
         },
         {
-            title: 'Анастасия Гурьянова',
-            task: 'Разработан сайт для фитнес модели, с элементами портфолио и описанием деятельности.',
-            tags: 'дизайн, разработка',
+            title: 'Anastasia Guryanova',
+            task: 'Developed website for a fitness model has been developed, with elements of a portfolio and description of activities.',
+            tags: 'design, development',
             thumbnail: guryanova_thumbnail,
             url: 'https://ghspbravo.github.io/Guryanova/'
         },
         {
             title: 'MasterSobol',
-            task: 'Создан сайт, разработана веб-платформу для продажи мехового сырья через онлайн аукцион.',
-            tags: 'дизайн, разработка',
+            task: 'Developed a website, developed a web platform for selling fur raw materials through an online auction.',
+            tags: 'design, development',
             thumbnail: thumbnail,
             url: null
         },
         {
-            title: 'Опора России',
-            task: 'Выполнен редизайн сайта, повышение посещаемости и узнавания компании, изменение системы наполнения контентом.',
-            tags: 'дизайн, разработка, seo',
+            title: 'Opora Russia',
+            task: 'Redesign and develop of the site, increase of attendance and recognition of the company, change of content filling system.',
+            tags: 'design, development, seo',
             thumbnail: thumbnail,
             url: null
         },
         {
-            title: 'Алексей Савчук',
-            task: 'Разработан блог известного музыканта с современным дизайном.',
-            tags: 'дизайн, разработка',
+            title: 'Alexey Savchuk',
+            task: ' Developed website of a famous musician with a modern design.',
+            tags: 'design, development',
             thumbnail: thumbnail,
             url: null
         },
         {
             title: 'KATADZE Shop',
-            task: 'Разработан интернет-магазин по продаже одежды нового молодежного бренда.',
-            tags: 'дизайн, разработка, seo, брендинг',
+            task: 'Developed online store selling clothes for a new youth brand.',
+            tags: 'design, development, seo, branding',
             thumbnail: thumbnail,
             url: null
         },
@@ -99,7 +99,7 @@ export default class Portfolio extends Component {
     render() {
         return (
             <section id='portfolio'>
-                <h1 style={{ marginBottom: getVH(50) }}>Портфолио</h1>
+                <h1 style={{ marginBottom: getVH(50) }}>Our works</h1>
                 {window.innerWidth > 992
                     ? <div style={{ display: 'flex' }}>
                         <div style={{ padding: '0 5px', flex: '1 1 25%' }}>
@@ -118,7 +118,7 @@ export default class Portfolio extends Component {
                             <p style={{ height: getVH(350), paddingLeft: '5px', overflowY: 'auto' }}>
                                 {this.projects[this.state.current].task}
                             </p>
-                            <a id='project_link_button' target='blank' href={this.projects[this.state.current].url} style={{ backgroundColor: '#363BAE', transition: 'background-color 0.3s', color: 'white', padding: '25px', textDecoration: 'none', display: 'block', width: 'fit-content' }}>{this.projects[this.state.current].url === null ? 'В разработке' : 'Посмотреть'}</a>
+                            <a id='project_link_button' target='blank' href={this.projects[this.state.current].url} style={{ backgroundColor: '#363BAE', transition: 'background-color 0.3s', color: 'white', padding: '25px', textDecoration: 'none', display: 'block', width: 'fit-content' }}>{this.projects[this.state.current].url === null ? 'In development' : 'Visit'}</a>
                         </div>
                     </div>
                     : window.innerWidth > 568
@@ -137,7 +137,7 @@ export default class Portfolio extends Component {
                                 <p style={{ color: '#A59292', padding: '0 5px', flex: '1 2 100%', marginTop: '2vh' }}>
                                     {this.projects[this.state.current].tags}
                                 </p>
-                                <a id='project_link_button' target='blank' href={this.projects[this.state.current].url} style={{ marginTop: '5vh', backgroundColor: '#363BAE', transition: 'background-color 0.3s', color: 'white', padding: '25px', textDecoration: 'none', display: 'block', width: 'fit-content' }}>{this.projects[this.state.current].url === null ? 'В разработке' : 'Посмотреть'}</a>
+                                <a id='project_link_button' target='blank' href={this.projects[this.state.current].url} style={{ marginTop: '5vh', backgroundColor: '#363BAE', transition: 'background-color 0.3s', color: 'white', padding: '25px', textDecoration: 'none', display: 'block', width: 'fit-content' }}>{this.projects[this.state.current].url === null ? 'In development' : 'Visit'}</a>
                             </div>
                         </div>
                         : <div style={{ display: 'flex', flexDirection: 'column', }}>
@@ -155,7 +155,7 @@ export default class Portfolio extends Component {
                                 <p style={{ color: '#A59292', padding: '0 5px', flex: '1 2 100%', marginTop: '1vh' }}>
                                     {this.projects[this.state.current].tags}
                                 </p>
-                                <a id='project_link_button' target='blank' href={this.projects[this.state.current].url} style={{ marginTop: '5vh', backgroundColor: '#363BAE', transition: 'background-color 0.3s', color: 'white', padding: '25px', textDecoration: 'none', display: 'block', width: 'fit-content' }}>{this.projects[this.state.current].url === null ? 'В разработке' : 'Посмотреть'}</a>
+                                <a id='project_link_button' target='blank' href={this.projects[this.state.current].url} style={{ marginTop: '5vh', backgroundColor: '#363BAE', transition: 'background-color 0.3s', color: 'white', padding: '25px', textDecoration: 'none', display: 'block', width: 'fit-content' }}>{this.projects[this.state.current].url === null ? 'In development' : 'Visit'}</a>
                             </div>
                         </div>
                 }
