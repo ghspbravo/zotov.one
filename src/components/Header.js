@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Logo from '../resourses/Logo.png'
 import customBG from '../customBG'
-import { loader } from '../animations';
+import { loader, loadContent } from '../animations';
 
 export default class Header extends Component {
 
@@ -21,7 +21,7 @@ export default class Header extends Component {
             <section id='container' style={{ userSelect: 'none', backgroundColor: '#363BAE', display: 'flex', flexDirection: window.innerWidth > 992 ? 'row' : 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                 <a style={{position: 'absolute', padding: '20px', top: '10px', left: window.innerWidth < 992 ? '5vw' : null, right: window.innerWidth > 992 ? '10px' : null, zIndex: 10, color: 'white', textDecoration: 'none'}} href="https://zotov.one/">ENG</a>
                 <div id="output" style={{position: 'absolute', width: '100%', height: '100%', zIndex: '0',}}></div>
-                <img id='logo' src={Logo} alt="logo" style={{ zIndex: 5,
+                <img onLoad={() => loadContent()} src={Logo} alt="logo" style={{ zIndex: 5,
                     width: '60vh',
                     minWidth: '220px',
                     objectFit: 'contain',
