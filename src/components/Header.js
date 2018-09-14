@@ -12,8 +12,8 @@ export default class Header extends Component {
     }
 
     componentDidMount() {
-        if (window.pageYOffset === 0) loader()
-        if (window.innerWidth > 568) customBG()
+        if (window.pageYOffset === 0 && document) loader()
+        customBG()
     }
 
     render() {
