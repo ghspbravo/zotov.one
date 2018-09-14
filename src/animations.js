@@ -11,14 +11,16 @@ let scrollController = new ScrollMagic.Controller()
 export const loader = () => {
     new TimelineMax().set('#container span, #container p, #container a, #desktop_nav a, #mobile_nav, #container a', { opacity: 0 })
         .set('html', { overflowY: 'hidden' })
+}
 
-    window.onload = () => new TimelineMax().delay(1)
+export const loadContent = () => {
+    new TimelineMax().delay(1)
         .fromTo('#container .digital', 0.5, { x: '-50' }, { x: 0, opacity: 1 })
         .fromTo('#container .agency', 0.5, { y: '100' }, { y: 0, opacity: 1 })
         .staggerTo('#desktop_nav a', 0.5, { opacity: 1 }, 0.2)
         .to('#container a', 1, { opacity: 1 }, '-=0.5')
         .to('#mobile_nav', 0.3, { opacity: 1 }, '-=1')
-        .set('html', { overflowY: 'scroll' })
+        .set('html', { overflowY: 'scroll' });
 }
 
 
