@@ -7,6 +7,7 @@ export default class Skills extends Component {
 
         this.state = {
             current: 0,
+            hovered: false
         }
     }
 
@@ -25,12 +26,14 @@ export default class Skills extends Component {
     render() {
         if (window.innerWidth > 568) return (
             <section id='skills' style={{ backgroundColor: '#363BAE', color: 'white' }}>
-                <button style={{ ...this.titleStyle, color: this.state.current === 0 ? '#363BAE' : 'white', transition: 'background-color 0.5s', backgroundColor: this.state.current === 0 ? 'white' : 'transparent' }}
-                    onClick={() => this.setState({ current: 0 })}>DEVELOPMENT</button>
-                <button style={{ ...this.titleStyle, color: this.state.current === 1 ? '#363BAE' : 'white', transition: 'background-color 0.5s', backgroundColor: this.state.current === 1 ? 'white' : 'transparent' }}
-                    onClick={() => this.setState({ current: 1 })}>DESIGN</button>
-                <button style={{ ...this.titleStyle, color: this.state.current === 2 ? '#363BAE' : 'white', transition: 'background-color 0.5s', backgroundColor: this.state.current === 2 ? 'white' : 'transparent' }}
-                    onClick={() => this.setState({ current: 2 })}>BRANDING</button>
+                <div style={{marginLeft: 'auto', width: 'fit-content'}} onMouseOver={() => this.setState({hovered: true})} onMouseLeave={() => this.setState({hovered: false})}>
+                    <button style={{ ...this.titleStyle, color: this.state.current === 0 && !this.state.hovered ? '#363BAE' : 'white', transition: 'background-color 0.5s', backgroundColor: this.state.current === 0 && !this.state.hovered ? 'white' : 'transparent' }}
+                        onClick={() => this.setState({ current: 0 })}>DEVELOPMENT</button>
+                    <button style={{ ...this.titleStyle, color: this.state.current === 1 && !this.state.hovered ? '#363BAE' : 'white', transition: 'background-color 0.5s', backgroundColor: this.state.current === 1 && !this.state.hovered ? 'white' : 'transparent' }}
+                        onClick={() => this.setState({ current: 1 })}>DESIGN</button>
+                    <button style={{ ...this.titleStyle, color: this.state.current === 2 && !this.state.hovered ? '#363BAE' : 'white', transition: 'background-color 0.5s', backgroundColor: this.state.current === 2 && !this.state.hovered ? 'white' : 'transparent' }}
+                        onClick={() => this.setState({ current: 2 })}>BRANDING</button>
+                </div>
                 {this.state.current === 0
                     ? <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: window.innerWidth < 568 ? '10vh' : '20vh' }}>
                         <p style={{ flex: '1 1 50%', padding: window.innerWidth < 992 ? '0 10px' : '0 30px' }}>Our team has been developing websites since 2015, and has since continued to improve and improve its skills in this field. When creating websites, we take into account not only the marketing component, but also pay great attention to visualization. </p>

@@ -15,7 +15,8 @@ export default class Portfolio extends Component {
         super(props)
 
         this.state = {
-            current: 0
+            current: 0,
+            hovered: false,
         }
     }
 
@@ -103,8 +104,8 @@ export default class Portfolio extends Component {
                 {window.innerWidth > 992
                     ? <div style={{ display: 'flex' }}>
                         <div style={{ padding: '0 5px', flex: '1 1 25%' }}>
-                            <ul>
-                                {this.projects.map((project, index) => <li key={index} style={{ margin: '10px', padding: '5px', backgroundColor: index === this.state.current ? '#363BAE' : null, cursor: 'pointer', color: index === this.state.current ? 'white' : 'black' }}
+                            <ul onMouseOver={() => this.setState({hovered: true})} onMouseLeave={() => this.setState({hovered: false})}>
+                                {this.projects.map((project, index) => <li key={index} style={{ margin: '10px', padding: '5px', backgroundColor: index === this.state.current && !this.state.hovered ? '#363BAE' : null, cursor: 'pointer', color: index === this.state.current && !this.state.hovered ? 'white' : 'black' }}
                                     onClick={() => this.setState({ current: index })}><p>{project.title}</p></li>)}
                             </ul>
                         </div>
