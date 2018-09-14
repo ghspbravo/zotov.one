@@ -11,7 +11,8 @@ let scrollController = new ScrollMagic.Controller()
 export const loader = () => {
     new TimelineMax().set('#container span, #container p, #container a, #desktop_nav a, #mobile_nav, #container a', { opacity: 0 })
         .set('html', { overflowY: 'hidden' })
-        .delay(1)
+
+    window.onload = () => new TimelineMax().delay(1)
         .fromTo('#container .digital', 0.5, { x: '-50' }, { x: 0, opacity: 1 })
         .fromTo('#container .agency', 0.5, { y: '100' }, { y: 0, opacity: 1 })
         .staggerTo('#desktop_nav a', 0.5, { opacity: 1 }, 0.2)
@@ -81,10 +82,10 @@ export const skillsLoader = () => {
 export const contactsLoader = () => {
 
     let contactsScene = new TimelineMax().add('start')
-        .from('#contacts h1', 0.5, {opacity: 0, y: 50})
-        .from('#contacts a', 0.5, {opacity: 0, y: 50})
-        .from('#contacts p', 0.5, {opacity: 0, y: 50})
-        .from('#contacts img', 0.5, {opacity: 0, y: 50}, '-=0.4')
+        .from('#contacts h1', 0.5, { opacity: 0, y: 50 })
+        .from('#contacts a', 0.5, { opacity: 0, y: 50 })
+        .from('#contacts p', 0.5, { opacity: 0, y: 50 })
+        .from('#contacts img', 0.5, { opacity: 0, y: 50 }, '-=0.4')
 
     new ScrollMagic.Scene({ triggerElement: '#contacts', duration: 0, reverse: false })
         .setTween(contactsScene)
