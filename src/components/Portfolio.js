@@ -8,6 +8,8 @@ import thumbnail from '../resourses/later.png'
 import nikitchuk_thumbnail from '../resourses/nikichuk.png'
 import samprachka_thumbnail from '../resourses/samprachka.png'
 import sdelanovmeste_thumbnail from '../resourses/sdelanovmeste.png'
+import opora_thumbnail from '../resourses/opora.png'
+import club811_thumbnail from '../resourses/club811.png'
 import { portfolioLoader } from '../animations';
 
 export default class Portfolio extends Component {
@@ -31,6 +33,20 @@ export default class Portfolio extends Component {
             tags: 'branding, design, development, seo',
             thumbnail: katadze_thumbnail,
             url: 'https://katadze.ru/'
+        },
+        {
+            title: 'Opora Russia',
+            task: 'Redesign and develop of the site, increase of attendance and recognition of the company, change of content filling system.',
+            tags: 'design, development, seo',
+            thumbnail: opora_thumbnail,
+            url: 'http://opora66.ru'
+        },
+        {
+            title: 'Club811',
+            task: 'Developed a online store with sophisticated visualization elements.',
+            tags: 'design, development',
+            thumbnail: club811_thumbnail,
+            url: 'http://club811.ru'
         },
         {
             title: 'SdelanoVmeste',
@@ -71,13 +87,6 @@ export default class Portfolio extends Component {
             title: 'MasterSobol',
             task: 'Developed a website, developed a web platform for selling fur raw materials through an online auction.',
             tags: 'design, development',
-            thumbnail: thumbnail,
-            url: null
-        },
-        {
-            title: 'Opora Russia',
-            task: 'Redesign and develop of the site, increase of attendance and recognition of the company, change of content filling system.',
-            tags: 'design, development, seo',
             thumbnail: thumbnail,
             url: null
         },
