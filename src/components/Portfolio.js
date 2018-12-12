@@ -8,6 +8,8 @@ import thumbnail from '../resourses/later.png'
 import nikitchuk_thumbnail from '../resourses/nikichuk.png'
 import samprachka_thumbnail from '../resourses/samprachka.png'
 import sdelanovmeste_thumbnail from '../resourses/sdelanovmeste.png'
+import opora_thumbnail from '../resourses/opora.png'
+import club811_thumbnail from '../resourses/club811.png'
 import { portfolioLoader } from '../animations';
 
 export default class Portfolio extends Component {
@@ -33,6 +35,20 @@ export default class Portfolio extends Component {
             url: 'https://katadze.ru/'
         },
         {
+            title: 'Опора России',
+            task: 'Выполнен редизайн сайта, повышение посещаемости и узнавания компании, изменение системы наполнения контентом.',
+            tags: 'дизайн, разработка, seo',
+            thumbnail: opora_thumbnail,
+            url: 'http://opora66.ru'
+        },
+        {
+            title: 'Club811',
+            task: 'Разработан интернет-магазин с сложными элементами визуализации.',
+            tags: 'дизайн, разработка',
+            thumbnail: club811_thumbnail,
+            url: 'http://club811.ru'
+        },
+        {
             title: 'SdelanoVmeste',
             task: 'Разработан многостраничный сайт брендингового агентства.',
             tags: 'дизайн, разработка',
@@ -51,7 +67,7 @@ export default class Portfolio extends Component {
             task: 'Разработан сайт и веб-платформа связанной с обменом криптновалюты с сложными элементами визуализации.',
             tags: 'дизайн, разработка',
             thumbnail: ducatur_thumbnail,
-            url: 'https://ghspbravo.github.io/ducatur/'
+            url: 'https://ducatur.com/'
         },
         {
             title: 'София Никитчук',
@@ -71,13 +87,6 @@ export default class Portfolio extends Component {
             title: 'MasterSobol',
             task: 'Создан сайт, разработана веб-платформу для продажи мехового сырья через онлайн аукцион.',
             tags: 'дизайн, разработка',
-            thumbnail: thumbnail,
-            url: null
-        },
-        {
-            title: 'Опора России',
-            task: 'Выполнен редизайн сайта, повышение посещаемости и узнавания компании, изменение системы наполнения контентом.',
-            tags: 'дизайн, разработка, seo',
             thumbnail: thumbnail,
             url: null
         },
