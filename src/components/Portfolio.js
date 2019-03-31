@@ -10,6 +10,12 @@ import samprachka_thumbnail from '../resourses/samprachka.png'
 import sdelanovmeste_thumbnail from '../resourses/sdelanovmeste.png'
 import opora_thumbnail from '../resourses/opora.png'
 import club811_thumbnail from '../resourses/club811.png'
+import infloyd_thumbnail from '../resourses/infloyd.png'
+import asopskov_thumbnail from '../resourses/asopskov.png'
+import nscanner_thumbnail from '../resourses/nscanner.png'
+import razoom_thumbnail from '../resourses/razoom.png'
+import veltorf_thumbnail from '../resourses/veltorf.png'
+import xxxweding_thumbnail from '../resourses/xxxweding.png'
 import { portfolioLoader } from '../animations';
 
 export default class Portfolio extends Component {
@@ -49,11 +55,39 @@ export default class Portfolio extends Component {
             url: 'http://club811.ru'
         },
         {
-            title: 'SdelanoVmeste',
-            task: 'Developed a multi-page branding agency site.',
+            title: 'Infloyd',
+            task: 'Developed website for BI analytics and business visualisation studio company.',
             tags: 'design, development',
-            thumbnail: sdelanovmeste_thumbnail,
-            url: 'http://sdelanovmeste.ru/demo'
+            thumbnail: infloyd_thumbnail,
+            url: 'http://infloyd.ru/'
+        },
+        // {
+        //     title: 'SdelanoVmeste',
+        //     task: 'Developed a multi-page branding agency site.',
+        //     tags: 'design, development',
+        //     thumbnail: sdelanovmeste_thumbnail,
+        //     url: 'http://sdelanovmeste.ru/demo'
+        // },
+        {
+            title: 'ASO Pskov',
+            task: 'Developed multipage website with functionality of store.',
+            tags: 'development',
+            thumbnail: asopskov_thumbnail,
+            url: 'http://www.asopskov.ru/'
+        },
+        {
+            title: 'Veltorf',
+            task: 'Developed multipage website.',
+            tags: 'development',
+            thumbnail: veltorf_thumbnail,
+            url: 'http://veltorf.com/'
+        },
+        {
+            title: 'RaZOOM',
+            task: 'Developed a website for perspective startup.',
+            tags: 'design, development',
+            thumbnail: razoom_thumbnail,
+            url: 'http://razoom.expert/'
         },
         {
             title: 'Samprachka',
@@ -70,40 +104,54 @@ export default class Portfolio extends Component {
             url: 'https://ghspbravo.github.io/ducatur/'
         },
         {
+            title: '3X',
+            task: 'Developed a website for beautiful weddings place in Ekaterinburg.',
+            tags: 'design, development',
+            thumbnail: xxxweding_thumbnail,
+            url: 'https://weddingekb.ru/'
+        },
+        {
+            title: 'N-SCANNER',
+            task: 'Developed a website for the residence search.',
+            tags: 'design, development',
+            thumbnail: nscanner_thumbnail,
+            url: 'http://n-scanner.ru/'
+        },
+        {
             title: 'Sofia Nikitchuk',
             task: 'A design and a website that describes the activities of a supermodel with elements of a portfolio.',
             tags: 'design, development',
             thumbnail: nikitchuk_thumbnail,
             url: 'https://sofianikitchuk.github.io/'
         },
-        {
-            title: 'Anastasia Guryanova',
-            task: 'Developed website for a fitness model has been developed, with elements of a portfolio and description of activities.',
-            tags: 'design, development',
-            thumbnail: guryanova_thumbnail,
-            url: 'https://ghspbravo.github.io/Guryanova/'
-        },
-        {
-            title: 'MasterSobol',
-            task: 'Developed a website, developed a web platform for selling fur raw materials through an online auction.',
-            tags: 'design, development',
-            thumbnail: thumbnail,
-            url: null
-        },
-        {
-            title: 'Alexey Savchuk',
-            task: ' Developed website of a famous musician with a modern design.',
-            tags: 'design, development',
-            thumbnail: thumbnail,
-            url: null
-        },
-        {
-            title: 'KATADZE Shop',
-            task: 'Developed online store selling clothes for a new youth brand.',
-            tags: 'design, development, seo, branding',
-            thumbnail: thumbnail,
-            url: null
-        },
+        // {
+        //     title: 'Anastasia Guryanova',
+        //     task: 'Developed website for a fitness model has been developed, with elements of a portfolio and description of activities.',
+        //     tags: 'design, development',
+        //     thumbnail: guryanova_thumbnail,
+        //     url: 'https://ghspbravo.github.io/Guryanova/'
+        // },
+        // {
+        //     title: 'MasterSobol',
+        //     task: 'Developed a website, developed a web platform for selling fur raw materials through an online auction.',
+        //     tags: 'design, development',
+        //     thumbnail: thumbnail,
+        //     url: null
+        // },
+        // {
+        //     title: 'Alexey Savchuk',
+        //     task: ' Developed website of a famous musician with a modern design.',
+        //     tags: 'design, development',
+        //     thumbnail: thumbnail,
+        //     url: null
+        // },
+        // {
+        //     title: 'KATADZE Shop',
+        //     task: 'Developed online store selling clothes for a new youth brand.',
+        //     tags: 'design, development, seo, branding',
+        //     thumbnail: thumbnail,
+        //     url: null
+        // },
     ]
 
     render() {
