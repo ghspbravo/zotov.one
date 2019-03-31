@@ -10,6 +10,12 @@ import samprachka_thumbnail from '../resourses/samprachka.png'
 import sdelanovmeste_thumbnail from '../resourses/sdelanovmeste.png'
 import opora_thumbnail from '../resourses/opora.png'
 import club811_thumbnail from '../resourses/club811.png'
+import veltorf_thumbnail from '../resourses/veltorf.png'
+import aso_thumbnail from '../resourses/asopskov.png'
+import razoom_thumbnail from '../resourses/razoom.png'
+import infloyd_thumbnail from '../resourses/infloyd.png'
+import nscanner_thumbnail from '../resourses/nscanner.png'
+import xxxweding_thumbnail from '../resourses/xxxweding.png'
 import { portfolioLoader } from '../animations';
 
 export default class Portfolio extends Component {
@@ -49,11 +55,32 @@ export default class Portfolio extends Component {
             url: 'http://club811.ru'
         },
         {
-            title: 'SdelanoVmeste',
-            task: 'Разработан многостраничный сайт брендингового агентства.',
+            title: 'Infloyd',
+            task: 'Разработан сайт для BI аналитики и визуализации бинеса.',
+            tags: 'разработка',
+            thumbnail: infloyd_thumbnail,
+            url: 'http://infloyd.ru/'
+        },
+        {
+            title: 'ASO Псков',
+            task: 'Разработан многостраничный сайт.',
+            tags: 'разработка',
+            thumbnail: aso_thumbnail,
+            url: 'http://asopskov.dnext.ru/'
+        },
+        {
+            title: 'Велторф',
+            task: 'Разработан многостраничный сайт.',
+            tags: 'разработка',
+            thumbnail: veltorf_thumbnail,
+            url: 'http://veltorf.com/'
+        },
+        {
+            title: 'RaZOOM',
+            task: 'Разработан многостраничный сайт для перспективного стартапа.',
             tags: 'дизайн, разработка',
-            thumbnail: sdelanovmeste_thumbnail,
-            url: 'http://sdelanovmeste.ru/demo'
+            thumbnail: razoom_thumbnail,
+            url: 'http://razoom.expert/'
         },
         {
             title: 'Samprachka',
@@ -70,40 +97,54 @@ export default class Portfolio extends Component {
             url: 'https://ducatur.com/'
         },
         {
+            title: '3X',
+            task: 'Разработан сайт для свадебного шатра.',
+            tags: 'дизайн, разработка',
+            thumbnail: xxxweding_thumbnail,
+            url: 'https://weddingekb.ru/'
+        },
+        {
+            title: 'N-SCANNER',
+            task: 'Разработан сайт для поиска недвижимости.',
+            tags: 'разработка',
+            thumbnail: nscanner_thumbnail,
+            url: 'http://n-scanner.ru/'
+        },
+        {
             title: 'София Никитчук',
             task: 'Разработан дизайн и сайт рассказывающий о деятельности модели с элементами портфолио.',
             tags: 'дизайн, разработка',
             thumbnail: nikitchuk_thumbnail,
             url: 'https://sofianikitchuk.github.io/'
         },
-        {
-            title: 'Анастасия Гурьянова',
-            task: 'Разработан сайт для фитнес модели, с элементами портфолио и описанием деятельности.',
-            tags: 'дизайн, разработка',
-            thumbnail: guryanova_thumbnail,
-            url: 'https://ghspbravo.github.io/Guryanova/'
-        },
-        {
-            title: 'MasterSobol',
-            task: 'Создан сайт, разработана веб-платформу для продажи мехового сырья через онлайн аукцион.',
-            tags: 'дизайн, разработка',
-            thumbnail: thumbnail,
-            url: null
-        },
-        {
-            title: 'Алексей Савчук',
-            task: 'Разработан блог известного музыканта с современным дизайном.',
-            tags: 'дизайн, разработка',
-            thumbnail: thumbnail,
-            url: null
-        },
-        {
-            title: 'KATADZE Shop',
-            task: 'Разработан интернет-магазин по продаже одежды нового молодежного бренда.',
-            tags: 'дизайн, разработка, seo, брендинг',
-            thumbnail: thumbnail,
-            url: null
-        },
+        // {
+        //     title: 'Анастасия Гурьянова',
+        //     task: 'Разработан сайт для фитнес модели, с элементами портфолио и описанием деятельности.',
+        //     tags: 'дизайн, разработка',
+        //     thumbnail: guryanova_thumbnail,
+        //     url: 'https://ghspbravo.github.io/Guryanova/'
+        // },
+        // {
+        //     title: 'MasterSobol',
+        //     task: 'Создан сайт, разработана веб-платформу для продажи мехового сырья через онлайн аукцион.',
+        //     tags: 'дизайн, разработка',
+        //     thumbnail: thumbnail,
+        //     url: null
+        // },
+        // {
+        //     title: 'Алексей Савчук',
+        //     task: 'Разработан блог известного музыканта с современным дизайном.',
+        //     tags: 'дизайн, разработка',
+        //     thumbnail: thumbnail,
+        //     url: null
+        // },
+        // {
+        //     title: 'KATADZE Shop',
+        //     task: 'Разработан интернет-магазин по продаже одежды нового молодежного бренда.',
+        //     tags: 'дизайн, разработка, seo, брендинг',
+        //     thumbnail: thumbnail,
+        //     url: null
+        // },
     ]
 
     render() {
