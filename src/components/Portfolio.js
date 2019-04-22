@@ -1,21 +1,6 @@
 import React, { Component } from 'react'
 import { getVH, getVW } from '../App';
 
-import ducatur_thumbnail from '../resourses/ducatur.png'
-import guryanova_thumbnail from '../resourses/guryanova.png'
-import katadze_thumbnail from '../resourses/katadze.png'
-import thumbnail from '../resourses/later.png'
-import nikitchuk_thumbnail from '../resourses/nikichuk.png'
-import samprachka_thumbnail from '../resourses/samprachka.png'
-import sdelanovmeste_thumbnail from '../resourses/sdelanovmeste.png'
-import opora_thumbnail from '../resourses/opora.png'
-import club811_thumbnail from '../resourses/club811.png'
-import veltorf_thumbnail from '../resourses/veltorf.png'
-import aso_thumbnail from '../resourses/asopskov.png'
-import razoom_thumbnail from '../resourses/razoom.png'
-import infloyd_thumbnail from '../resourses/infloyd.png'
-import nscanner_thumbnail from '../resourses/nscanner.png'
-import xxxweding_thumbnail from '../resourses/xxxweding.png'
 import { portfolioLoader } from '../animations';
 
 export default class Portfolio extends Component {
@@ -25,130 +10,29 @@ export default class Portfolio extends Component {
         this.state = {
             current: 0,
             hovered: false,
+
+            loaded: false
         }
     }
 
+    projects = []
+
     componentDidMount() {
         portfolioLoader()
+
+        fetch('https://zotov.one/content/portfolio.json', {
+            headers: { 'content-type': 'application/json' }
+        }).then(response => response.json())
+            .then(data => {
+                this.projects = data
+                this.setState({ loaded: true })
+            })
+            .catch(console.error)
     }
 
-    projects = [
-        {
-            title: 'KATADZE',
-            task: 'Создан брендбук, выполнен редизайн сайта, создана веб-платформа поиска и создания гидов в любой точке мира.',
-            tags: 'брендинг, дизайн, разработка, seo',
-            thumbnail: katadze_thumbnail,
-            url: 'https://katadze.ru/'
-        },
-        {
-            title: 'Опора России',
-            task: 'Выполнен редизайн сайта, повышение посещаемости и узнавания компании, изменение системы наполнения контентом.',
-            tags: 'дизайн, разработка, seo',
-            thumbnail: opora_thumbnail,
-            url: 'http://opora66.ru'
-        },
-        {
-            title: 'Club811',
-            task: 'Разработан интернет-магазин с сложными элементами визуализации.',
-            tags: 'дизайн, разработка',
-            thumbnail: club811_thumbnail,
-            url: 'http://club811.ru'
-        },
-        {
-            title: 'Infloyd',
-            task: 'Разработан сайт для BI аналитики и визуализации бинеса.',
-            tags: 'разработка',
-            thumbnail: infloyd_thumbnail,
-            url: 'http://infloyd.ru/'
-        },
-        {
-            title: 'ASO Псков',
-            task: 'Разработан многостраничный сайт.',
-            tags: 'разработка',
-            thumbnail: aso_thumbnail,
-            url: 'http://asopskov.dnext.ru/'
-        },
-        {
-            title: 'Велторф',
-            task: 'Разработан многостраничный сайт.',
-            tags: 'разработка',
-            thumbnail: veltorf_thumbnail,
-            url: 'http://veltorf.com/'
-        },
-        {
-            title: 'RaZOOM',
-            task: 'Разработан многостраничный сайт для перспективного стартапа.',
-            tags: 'дизайн, разработка',
-            thumbnail: razoom_thumbnail,
-            url: 'http://razoom.expert/'
-        },
-        {
-            title: 'Samprachka',
-            task: 'Разработан сайт компании прачечных по всей России с интеграцией сложных функциональных модулей.',
-            tags: 'дизайн, разработка',
-            thumbnail: samprachka_thumbnail,
-            url: 'http://sam-prachka.ru/'
-        },
-        {
-            title: 'Ducatur',
-            task: 'Разработан сайт и веб-платформа связанной с обменом криптновалюты с сложными элементами визуализации.',
-            tags: 'дизайн, разработка',
-            thumbnail: ducatur_thumbnail,
-            url: 'https://ducatur.com/'
-        },
-        {
-            title: '3X',
-            task: 'Разработан сайт для свадебного шатра.',
-            tags: 'дизайн, разработка',
-            thumbnail: xxxweding_thumbnail,
-            url: 'https://weddingekb.ru/'
-        },
-        {
-            title: 'N-SCANNER',
-            task: 'Разработан сайт для поиска недвижимости.',
-            tags: 'разработка',
-            thumbnail: nscanner_thumbnail,
-            url: 'http://n-scanner.ru/'
-        },
-        {
-            title: 'София Никитчук',
-            task: 'Разработан дизайн и сайт рассказывающий о деятельности модели с элементами портфолио.',
-            tags: 'дизайн, разработка',
-            thumbnail: nikitchuk_thumbnail,
-            url: 'https://sofianikitchuk.github.io/'
-        },
-        // {
-        //     title: 'Анастасия Гурьянова',
-        //     task: 'Разработан сайт для фитнес модели, с элементами портфолио и описанием деятельности.',
-        //     tags: 'дизайн, разработка',
-        //     thumbnail: guryanova_thumbnail,
-        //     url: 'https://ghspbravo.github.io/Guryanova/'
-        // },
-        // {
-        //     title: 'MasterSobol',
-        //     task: 'Создан сайт, разработана веб-платформу для продажи мехового сырья через онлайн аукцион.',
-        //     tags: 'дизайн, разработка',
-        //     thumbnail: thumbnail,
-        //     url: null
-        // },
-        // {
-        //     title: 'Алексей Савчук',
-        //     task: 'Разработан блог известного музыканта с современным дизайном.',
-        //     tags: 'дизайн, разработка',
-        //     thumbnail: thumbnail,
-        //     url: null
-        // },
-        // {
-        //     title: 'KATADZE Shop',
-        //     task: 'Разработан интернет-магазин по продаже одежды нового молодежного бренда.',
-        //     tags: 'дизайн, разработка, seo, брендинг',
-        //     thumbnail: thumbnail,
-        //     url: null
-        // },
-    ]
-
     render() {
-        return (
+        return this.state.loaded
+        ? (
             <section id='portfolio'>
                 <h1 style={{ marginBottom: getVH(50) }}>Портфолио</h1>
                 {window.innerWidth > 992
@@ -211,6 +95,11 @@ export default class Portfolio extends Component {
                         </div>
                 }
             </section>
+        )
+        : (
+            <section id="portfolio">
+            <p>Loading...</p>
+        </section>
         )
     }
 }
