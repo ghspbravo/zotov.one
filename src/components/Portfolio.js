@@ -76,7 +76,7 @@ export default class Portfolio extends Component {
                             </div>
                         </div>
                         : <div style={{ display: 'flex', flexDirection: 'column', }}>
-                            <div style={{ padding: '0 5px', flex: '1 1 100%', maxHeight: '60vh', overflowY: 'auto', }}>
+                            <div style={{ padding: '0 5px', flex: '1 1 100%' }}>
                                 <ul>
                                     {this.projects.map((project, index) => <li key={index} style={{ margin: '10px', padding: '5px', backgroundColor: index === this.state.current ? '#363BAE' : null, cursor: 'pointer', color: index === this.state.current ? 'white' : 'black' }}
                                         onClick={() => this.setState({ current: index })}><p>{project.title}</p></li>)}
