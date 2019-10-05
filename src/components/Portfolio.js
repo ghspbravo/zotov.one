@@ -3,9 +3,14 @@ import { getVH, getVW } from '../App';
 
 import { portfolioLoader } from '../animations';
 
+import spinner from '../resourses/spinner.gif';
+
 export default class Portfolio extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+
+        this.desktopImageRef = React.createRef();
+        this.mobileImageRef = React.createRef();
 
         this.state = {
             current: 0,
@@ -15,12 +20,14 @@ export default class Portfolio extends Component {
         }
     }
 
-    projects = []
+    projects = [];
+
+    prevIndex = -1;
 
     componentDidMount() {
         portfolioLoader()
 
-        fetch('https://zotov.one/content/portfolio.json', {
+        fetch('http://zotov.one/content/portfolio.json', {
             headers: { 'content-type': 'application/json' }
         }).then(response => response.json())
             .then(data => {
@@ -28,6 +35,38 @@ export default class Portfolio extends Component {
                 this.setState({ loaded: true })
             })
             .catch(console.error)
+    }
+
+    componentDidUpdate() {
+      if (this.prevIndex !== this.state.current) {
+        const cacheImg = document.createElement("img");
+        const cacheSrc = this.projects[this.state.current].thumbnail;
+        cacheImg.src = cacheSrc;
+
+        if (this.desktopImageRef.current) {
+          this.desktopImageRef.current.src = spinner;
+          this.desktopImageRef.current.style.objectFit = "contain";
+        }
+
+        if (this.mobileImageRef.current) {
+          this.mobileImageRef.current.src = spinner;
+          this.mobileImageRef.current.style.objectFit = "contain";
+        }
+
+
+        cacheImg.addEventListener("load", () => {
+          if (this.desktopImageRef.current) {
+            this.desktopImageRef.current.style.objectFit = "cover";
+            this.desktopImageRef.current.src = cacheSrc;
+          }
+          if (this.mobileImageRef.current) {
+            this.mobileImageRef.current.style.objectFit = "cover";
+            this.mobileImageRef.current.src = cacheSrc;
+          }
+        })
+
+        this.prevIndex = this.state.current;
+      }
     }
 
     render() {
@@ -44,7 +83,7 @@ export default class Portfolio extends Component {
                             </ul>
                         </div>
                         <div style={{ flex: '1 1 50%' }}>
-                            <img src={this.projects[this.state.current].thumbnail} alt="project" style={{ height: getVH(350), width: '100%', objectFit: 'cover' }} />
+                            <img ref={this.desktopImageRef} data-src={this.projects[this.state.current].thumbnail} alt="project" style={{ height: getVH(350), width: '100%', objectFit: 'cover' }} />
                             <p style={{ color: '#A59292', width: '50%', marginLeft: 'auto' }}>
                                 {this.projects[this.state.current].tags}
                             </p>
@@ -83,7 +122,7 @@ export default class Portfolio extends Component {
                                 </ul>
                             </div>
                             <div style={{ padding: '0 5px', flex: '1 1 100%', display: 'flex', flexWrap: 'wrap', marginTop: '5vh' }}>
-                                <img src={this.projects[this.state.current].thumbnail} alt="project" style={{ marginBottom: '5vh', height: getVH(350), width: '100%', objectFit: 'cover' }} />
+                                <img ref={this.mobileImageRef}  data-src={this.projects[this.state.current].thumbnail} alt="project" style={{ marginBottom: '5vh', height: getVH(350), width: '100%', objectFit: 'cover' }} />
                                 <p style={{ padding: '0 5px', flex: '2 1 100%' }}>
                                     {this.projects[this.state.current].task}
                                 </p>
