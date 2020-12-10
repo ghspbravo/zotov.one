@@ -50,33 +50,36 @@ class Portfolio extends Component {
     }
 
     if (this.prevIndex !== this.state.current) {
-      const cacheImg = document.createElement("img");
-      const cacheSrc = this.projects[this.state.current].thumbnail;
-      cacheImg.src = cacheSrc;
+      try {
+        const cacheImg = document.createElement("img");
+        const cacheSrc = this.projects[this.state.current].thumbnail;
+        cacheImg.src = cacheSrc;
 
-      if (this.desktopImageRef.current) {
-        this.desktopImageRef.current.src = spinner;
-        this.desktopImageRef.current.style.objectFit = "contain";
-      }
-
-      if (this.mobileImageRef.current) {
-        this.mobileImageRef.current.src = spinner;
-        this.mobileImageRef.current.style.objectFit = "contain";
-      }
-
-
-      cacheImg.addEventListener("load", () => {
         if (this.desktopImageRef.current) {
-          this.desktopImageRef.current.style.objectFit = "cover";
-          this.desktopImageRef.current.src = cacheSrc;
+          this.desktopImageRef.current.src = spinner;
+          this.desktopImageRef.current.style.objectFit = "contain";
         }
-        if (this.mobileImageRef.current) {
-          this.mobileImageRef.current.style.objectFit = "cover";
-          this.mobileImageRef.current.src = cacheSrc;
-        }
-      })
 
-      this.prevIndex = this.state.current;
+        if (this.mobileImageRef.current) {
+          this.mobileImageRef.current.src = spinner;
+          this.mobileImageRef.current.style.objectFit = "contain";
+        }
+
+
+        cacheImg.addEventListener("load", () => {
+          if (this.desktopImageRef.current) {
+            this.desktopImageRef.current.style.objectFit = "cover";
+            this.desktopImageRef.current.src = cacheSrc;
+          }
+          if (this.mobileImageRef.current) {
+            this.mobileImageRef.current.style.objectFit = "cover";
+            this.mobileImageRef.current.src = cacheSrc;
+          }
+        })
+
+        this.prevIndex = this.state.current;
+      }
+      catch (e) { }
     }
   }
 

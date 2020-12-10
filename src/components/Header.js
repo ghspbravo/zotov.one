@@ -4,6 +4,7 @@ import Logo from '../resourses/Logo.png'
 import customBG from '../customBG'
 import { loader, loadContent } from '../animations';
 import { withTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 const languages = {
   en: "en",
@@ -15,7 +16,7 @@ class Header extends Component {
     super(props)
 
     this.state = {
-      currentLang: languages.ru // default language
+      currentLang: i18next.language // default language
     }
     this.onLanguageChange = this.onLanguageChange.bind(this);
   }
@@ -26,13 +27,12 @@ class Header extends Component {
   }
 
   componentDidMount() {
-    // FIXME: uncomment
-    // if (window.pageYOffset === 0 && document) loader()
+    if (window.pageYOffset === 0 && document) loader()
     customBG()
   }
 
   onLanguageChange() {
-    const newLang = this.state.currentLang === languages.ru ? languages.en : languages.ru;
+    const newLang = this.state.currentLang.includes(languages.ru) ? languages.en : languages.ru;
     this.setState({
       currentLang: newLang
     });
@@ -43,7 +43,7 @@ class Header extends Component {
     return (
       <section id='container' style={{ userSelect: 'none', backgroundColor: '#363BAE', display: 'flex', flexDirection: window.innerWidth > 992 ? 'row' : 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
         <a onClick={this.onLanguageChange} style={{ position: 'absolute', padding: '20px', top: '10px', left: window.innerWidth < 992 ? '5vw' : null, right: window.innerWidth > 992 ? '10px' : null, zIndex: 10, color: 'white', textDecoration: 'none' }} >
-          {this.state.currentLang === languages.ru ? "ENG" : "RU"}
+          {this.state.currentLang.includes(languages.ru) ? "ENG" : "RU"}
         </a>
         <div id="output" style={{ position: 'absolute', width: '100%', height: '100%', zIndex: '0', }}></div>
         <img onLoad={() => loadContent()} src={Logo} alt="logo" style={{
