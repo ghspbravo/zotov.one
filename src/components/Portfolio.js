@@ -27,7 +27,7 @@ export default class Portfolio extends Component {
     componentDidMount() {
         portfolioLoader()
 
-        fetch('http://zotov.one/content/portfolio.json', {
+        fetch('https://zotov.one/content/portfolio.json', {
             headers: { 'content-type': 'application/json' }
         }).then(response => response.json())
             .then(data => {
