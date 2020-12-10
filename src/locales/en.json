@@ -1,0 +1,45 @@
+{
+	"translations": {
+		"common": {
+			"loading": "Loading"
+		},
+		"navbar": {
+			"home": "ZOTOV",
+			"history": "Our history",
+			"portfolio": "Portfolio",
+			"skills": "Services",
+			"contacts": "Contacts"
+		},
+		"history": {
+			"title": "Our history",
+			"text": "We are a team that creates competently designed, high-performance sites with excellent design. Love of action - that's what drives them. ZOTOV is an endless faith in the team, without which nothing would have happened. Therefore, we constantly develop it, ensuring continuous growth in breadth and depth.",
+			"slogan": "is the quality"
+		},
+		"portfolio": {
+			"title": "Portfolio",
+			"buttons": {
+				"open": "Open",
+				"soon": "Developing"
+			}
+		},
+		"skills": {
+			"development": {
+				"title": "Development",
+				"col1": "Our team has been developing websites since 2015, and has since continued to improve and improve its skills in this field. When creating websites, we take into account not only the marketing component, but also pay great attention to visualization.",
+				"col2": "To understand our approach to the development of sites, it is enough to get acquainted with our works, which are awarded admiration and stand out among the works of competitors. For us, any site is the face of the company, and the aesthetic component plays an important role."
+			},
+			"design": {
+				"title": "Design",
+				"col1": "Design is our special love. Qualitatively designed website or application is a powerful marketing tool of any business, and we will gladly help you in developing an excellent design and visual images.",
+				"col2": "We love a functional and modern interface, with great desire we will implement all your desired wishes and provide the maximum user experience."
+			}
+		},
+		"contacts": {
+			"title": {
+				"upper": "Let's be ahead",
+				"down": "of your competitors"
+			},
+			"address": "Moscow, Ulitsa Kuznetskiy Most 21/5"
+		}
+	}
+}
