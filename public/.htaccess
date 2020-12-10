@@ -1,0 +1,6 @@
+Header set Access-Control-Allow-Origin *
+Header set Access-Control-Allow-Headers Content-Type
+
+RewriteEngine On
+# redirect to admin panel
+RewriteRule ^admin$ /admin\.php [R=301,L]
