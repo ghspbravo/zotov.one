@@ -200,3 +200,6 @@ section {
 	color: #363BAE !important;
 }
 
+.portfolio-item:hover .portfolio-item__title {
+  text-decoration: underline;
+}
